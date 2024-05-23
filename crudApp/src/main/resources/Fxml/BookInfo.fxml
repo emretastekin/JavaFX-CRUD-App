@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="644.0" prefWidth="899.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruddapp.crudapp.BookInfoController">
+   <children>
+      <VBox layoutX="467.0" layoutY="121.0" prefHeight="503.0" prefWidth="432.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book Name" wrappingWidth="131.48675537109375" />
+            <Label fx:id="lblBookName" prefHeight="18.0" prefWidth="442.0" text="Book Name">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Label>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Author">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Label fx:id="lblAuthor" prefHeight="16.0" prefWidth="78.0" text="Author">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Label>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Label fx:id="lblPageNumber" text="Page Number">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Label>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Label fx:id="lblPrice" text="Price">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+      <ImageView fitHeight="503.0" fitWidth="471.0" layoutX="-21.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@library4.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="131.0" text="&lt;---  Back" />
+      <Button fx:id="btnExit" layoutX="733.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="131.0" text="EXIT" />
+   </children>
+</AnchorPane>
