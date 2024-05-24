@@ -7,51 +7,91 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="644.0" prefWidth="899.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruddapp.crudapp.BookInfoController">
    <children>
       <VBox layoutX="467.0" layoutY="121.0" prefHeight="503.0" prefWidth="432.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book Name" wrappingWidth="131.48675537109375" />
-            <Label fx:id="lblBookName" prefHeight="18.0" prefWidth="442.0" text="Book Name">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book Name" wrappingWidth="131.48675537109375">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Text>
+            <Label fx:id="lblBookName" prefHeight="18.0" prefWidth="442.0" text="Book Name" textFill="RED">
                <padding>
                   <Insets top="10.0" />
                </padding>
+               <font>
+                  <Font size="17.0" />
+               </font>
             </Label>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Author">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
             </Text>
-            <Label fx:id="lblAuthor" prefHeight="16.0" prefWidth="78.0" text="Author">
+            <Label fx:id="lblAuthor" prefHeight="16.0" prefWidth="78.0" text="Author" textFill="RED">
                <padding>
                   <Insets top="10.0" />
                </padding>
+               <font>
+                  <Font size="17.0" />
+               </font>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Page Number">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
             </Text>
-            <Label fx:id="lblPageNumber" text="Page Number">
+            <Label fx:id="lblPageNumber" text="Page Number" textFill="RED">
                <padding>
                   <Insets top="10.0" />
                </padding>
+               <font>
+                  <Font size="17.0" />
+               </font>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
             </Text>
-            <Label fx:id="lblPrice" text="Price">
+            <Label fx:id="lblPrice" text="Price" textFill="RED">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
                <padding>
                   <Insets top="10.0" />
                </padding>
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book Count">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <Label fx:id="lblBookCount" text="Book Count" textFill="RED">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+               <font>
+                  <Font size="17.0" />
+               </font>
             </Label>
          </children>
       </VBox>
@@ -60,7 +100,13 @@
             <Image url="@library4.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="131.0" text="&lt;---  Back" />
-      <Button fx:id="btnExit" layoutX="733.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="131.0" text="EXIT" />
+      <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="131.0" text="&lt;---  Back" textFill="RED">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font></Button>
+      <Button fx:id="btnExit" layoutX="733.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="131.0" text="EXIT" textFill="RED">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font></Button>
    </children>
 </AnchorPane>

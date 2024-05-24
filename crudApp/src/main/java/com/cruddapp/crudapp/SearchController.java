@@ -57,11 +57,14 @@ public class SearchController implements Initializable {
                 Parent root = loader.load();
 
                 BookInfoController controller = loader.getController();
-                controller.setBookInfo(rs.getString("BookName"), rs.getString("Author"), rs.getString("PAGENUMBER"), rs.getString("Price"));
+                controller.setBookInfo(rs.getString("BookName"), rs.getString("Author"), rs.getString("PAGENUMBER"), rs.getString("Price"), rs.getString("BookCount"));
 
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
                 stage.show();
+
+                Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                currentStage.close();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Not Found Book ID", ButtonType.OK);
                 alert.showAndWait();

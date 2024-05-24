@@ -33,17 +33,22 @@ public class BookInfoController implements Initializable {
     private Label lblPrice;
 
     @FXML
+    private Label lblBookCount;
+
+    @FXML
     private Button btnBack;
 
     @FXML
     private Button btnExit;
 
 
-    public void setBookInfo(String bookName, String author, String pageNumber, String price) {
+    public void setBookInfo(String bookName, String author, String pageNumber, String price, String bookCount) {
         lblBookName.setText(bookName);
         lblAuthor.setText(author);
         lblPageNumber.setText(pageNumber);
         lblPrice.setText(price);
+        lblBookCount.setText(bookCount);
+
     }
 
     @Override

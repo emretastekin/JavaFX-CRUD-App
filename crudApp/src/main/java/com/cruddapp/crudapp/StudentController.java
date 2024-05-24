@@ -47,6 +47,9 @@ public class StudentController implements Initializable {
     private Button btnExit;
 
     @FXML
+    private Button btnMath;
+
+    @FXML
     private TextField tPrice;
 
     @FXML
@@ -57,6 +60,9 @@ public class StudentController implements Initializable {
 
     @FXML
     private TextField tAuthor;
+
+    @FXML
+    private TextField tBookCount;
 
     @FXML
     private TableColumn<Student,String> colPrice;
@@ -74,6 +80,9 @@ public class StudentController implements Initializable {
     private TableColumn<Student, String> colAuthor;
 
     @FXML
+    private TableColumn<Student, String> colBookCount;
+
+    @FXML
     private TableView<Student> table;
     int id=0;
 
@@ -82,6 +91,8 @@ public class StudentController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         btnSearch.setOnAction(actionEvent -> searchStudents(actionEvent));
         btnExit.setOnAction(actionEvent -> exit(actionEvent));
+        btnMath.setOnAction(actionEvent -> btnMathClicked(actionEvent));
+
 
         showStudents();
     }
@@ -101,6 +112,8 @@ public class StudentController implements Initializable {
                 st.setAuthor((rs.getString("Author")));
                 st.setPagenumber(rs.getString("PAGENUMBER"));
                 st.setPrice((rs.getString("Price")));
+                st.setBookCount((rs.getString("BookCount")));
+
 
                 students.add(st);
 
@@ -120,6 +133,7 @@ public class StudentController implements Initializable {
         colAuthor.setCellValueFactory(new PropertyValueFactory<Student,String>("author"));
         colPNumber.setCellValueFactory(new PropertyValueFactory<Student,String>("pagenumber"));
         colPrice.setCellValueFactory(new PropertyValueFactory<Student,String>("price"));
+        colBookCount.setCellValueFactory(new PropertyValueFactory<Student,String>("bookCount"));
 
 
 
@@ -132,7 +146,7 @@ public class StudentController implements Initializable {
 
     @FXML
     void createStudent(ActionEvent event) {
-        String insert="insert into students(BookName,Author,PAGENUMBER,Price) values(?,?,?,?)";
+        String insert="insert into students(BookName,Author,PAGENUMBER,Price,BookCount) values(?,?,?,?,?)";
         con=DBConnection.getCon();
         try {
             st=con.prepareStatement(insert);
@@ -140,6 +154,8 @@ public class StudentController implements Initializable {
             st.setString(2,tAuthor.getText());
             st.setString(3,tPNumber.getText());
             st.setString(4,tPrice.getText());
+            st.setString(5,tBookCount.getText());
+
 
             st.executeUpdate();
             clear();
@@ -157,6 +173,8 @@ public class StudentController implements Initializable {
         tAuthor.setText(student.getAuthor());
         tPNumber.setText(student.getPagenumber());
         tPrice.setText(student.getPrice());
+        tBookCount.setText(student.getBookCount());
+
 
         btnSave.setDisable(true);
     }
@@ -182,13 +200,15 @@ public class StudentController implements Initializable {
         tAuthor.setText(null);
         tPNumber.setText(null);
         tPrice.setText(null);
+        tBookCount.setText(null);
+
 
         btnSave.setDisable(false);
     }
 
     @FXML
     void updateStudent(ActionEvent event) {
-        String update="update students set BookName=?,Author=?,PAGENUMBER=?,Price=? where id=?";
+        String update="update students set BookName=?,Author=?,PAGENUMBER=?,Price=?,BookCount=? where id=?";
         con=DBConnection.getCon();
         try {
             st=con.prepareStatement(update);
@@ -196,8 +216,10 @@ public class StudentController implements Initializable {
             st.setString(2,tAuthor.getText());
             st.setString(3,tPNumber.getText());
             st.setString(4,tPrice.getText());
+            st.setString(5,tBookCount.getText());
 
-            st.setInt(5,id);
+
+            st.setInt(6,id);
             st.executeUpdate();
             showStudents();
             clear();
@@ -233,6 +255,21 @@ public class StudentController implements Initializable {
                 Platform.exit();
             }
         });
+    }
+
+    void btnMathClicked(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/calculations.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

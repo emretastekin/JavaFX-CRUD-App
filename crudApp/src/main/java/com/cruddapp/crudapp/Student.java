@@ -6,6 +6,7 @@ public class Student {
     private  String author;
     private String pagenumber;
     private String price;
+    private String bookCount;
 
     public int getId() {
         return id;
@@ -45,5 +46,13 @@ public class Student {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getBookCount() {
+        return bookCount;
+    }
+
+    public void setBookCount(String bookCount) {
+        this.bookCount = bookCount;
     }
 }

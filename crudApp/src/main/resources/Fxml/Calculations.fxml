@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="635.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruddapp.crudapp.CalculationController">
+   <children>
+      <ImageView fitHeight="509.0" fitWidth="440.0" layoutX="14.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@library5.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="471.0" layoutY="151.0" prefHeight="200.0" prefWidth="388.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book ID">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <TextField fx:id="tId" prefHeight="40.0" prefWidth="368.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0">
+              <buttons>
+                <Button fx:id="btnTotal" mnemonicParsing="false" prefHeight="26.0" prefWidth="346.0" text="Total Price" textFill="#1100ff">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font></Button>
+                  <Button fx:id="btnUnit" layoutX="323.0" layoutY="17.0" mnemonicParsing="false" text="Unit Price" textFill="#1100ff">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font></Button>
+              </buttons>
+            </ButtonBar>
+         </children>
+      </VBox>
+      <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="135.0" text="&lt;---  Back" textFill="RED">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font></Button>
+      <Button fx:id="btnExit" layoutX="744.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" text="EXIT" textFill="RED">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

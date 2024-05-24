@@ -7,8 +7,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="624.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruddapp.crudapp.SearchController">
    <children>
@@ -19,20 +19,32 @@
       </ImageView>
       <VBox layoutX="432.0" layoutY="187.0" prefHeight="200.0" prefWidth="322.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book ID" />
-            <TextField fx:id="tBookID">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book ID">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Text>
+            <TextField fx:id="tBookID" prefHeight="40.0" prefWidth="322.0">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
             </TextField>
-            <Button fx:id="btnBook" mnemonicParsing="false" prefHeight="26.0" prefWidth="337.0" text="Search">
+            <Button fx:id="btnBook" mnemonicParsing="false" prefHeight="26.0" prefWidth="337.0" text="Search" textFill="#1100ff">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
             </Button>
          </children>
       </VBox>
-      <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" text="&lt;---  Back" />
-      <Button fx:id="btnExit" layoutX="668.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="121.0" text="EXIT" />
+      <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="&lt;---  Back" textFill="RED">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font></Button>
+      <Button fx:id="btnExit" layoutX="668.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="121.0" text="EXIT" textFill="RED">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font></Button>
    </children>
 </AnchorPane>

@@ -14,49 +14,95 @@
 
 <AnchorPane prefHeight="663.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruddapp.crudapp.StudentController">
    <children>
-      <VBox layoutX="14.0" layoutY="48.0" prefHeight="460.0" prefWidth="300.0" spacing="20.0">
+      <VBox layoutX="610.0" layoutY="85.0" prefHeight="480.0" prefWidth="294.0" spacing="20.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book Name" />
-            <TextField fx:id="tBookName" prefWidth="300.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Author" />
-            <TextField fx:id="tAuthor" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Page Number" />
-            <TextField fx:id="tPNumber" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
-            <TextField fx:id="tPrice" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book Name">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Text>
+            <TextField fx:id="tBookName" prefHeight="37.0" prefWidth="300.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Author">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Text>
+            <TextField fx:id="tAuthor" prefHeight="39.0" prefWidth="300.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Page Number" wrappingWidth="156.42843627929688">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Text>
+            <TextField fx:id="tPNumber" prefHeight="44.0" prefWidth="293.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Text>
+            <TextField fx:id="tPrice" prefHeight="46.0" prefWidth="300.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book Count">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <TextField fx:id="tBookCount" prefHeight="48.0" prefWidth="300.0" />
          </children>
       </VBox>
-      <TableView fx:id="table" layoutX="347.0" layoutY="90.0" onMouseClicked="#getData" prefHeight="318.0" prefWidth="538.0">
+      <TableView fx:id="table" layoutX="14.0" layoutY="85.0" onMouseClicked="#getData" prefHeight="318.0" prefWidth="538.0">
         <columns>
-          <TableColumn fx:id="colid" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="colbName" prefWidth="75.0" text="Book Name" />
-            <TableColumn fx:id="colAuthor" prefWidth="83.99996948242188" text="Author" />
-            <TableColumn fx:id="colPNumber" prefWidth="122.4000244140625" text="Page Number">
+          <TableColumn fx:id="colid" prefWidth="33.5999755859375" text="ID" />
+          <TableColumn fx:id="colbName" prefWidth="135.19998168945312" text="Book Name" />
+            <TableColumn fx:id="colAuthor" prefWidth="107.20001220703125" text="Author" />
+            <TableColumn fx:id="colPNumber" prefWidth="130.39996337890625" text="Page Number">
                 <cellValueFactory>
                     <PropertyValueFactory property="PAGENUMBER" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="colPrice" prefWidth="122.4000244140625" text="Price">
+            <TableColumn fx:id="colPrice" prefWidth="53.5999755859375" text="Price">
+               <cellValueFactory>
+                  <PropertyValueFactory property="price" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="colBookCount" prefWidth="81.60009765625" text="Book Count">
                <cellValueFactory>
                   <PropertyValueFactory property="price" />
                </cellValueFactory>
             </TableColumn>
 
-        </columns>
+              </columns>
       </TableView>
-      <Label layoutX="347.0" layoutY="23.0" text="Library Management System">
+      <Label layoutX="347.0" layoutY="28.0" text="Library Management System" textFill="#ff00f6">
          <font>
-            <Font size="33.0" />
+            <Font name="System Bold" size="32.0" />
          </font></Label>
-      <ButtonBar layoutX="347.0" layoutY="440.0" prefHeight="40.0" prefWidth="538.0">
+      <ButtonBar layoutX="-8.0" layoutY="430.0" prefHeight="46.0" prefWidth="612.0">
         <buttons>
-          <Button fx:id="btnSave" mnemonicParsing="false" onAction="#createStudent" text="Save" />
-            <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteStudent" text="Delete" />
-            <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#updateStudent" text="Update" />
-            <Button fx:id="btnClear" mnemonicParsing="false" onAction="#clearField" text="Clear" />
-            <Button fx:id="btnSearch" mnemonicParsing="false" prefHeight="26.0" prefWidth="197.0" text="Search" />
+            <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#updateStudent" prefHeight="46.0" text="Update" textFill="#1100ff">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Button>
+            <Button fx:id="btnClear" mnemonicParsing="false" onAction="#clearField" prefHeight="41.0" text="Clear" textFill="#1100ff">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Button>
+            <Button fx:id="btnSearch" mnemonicParsing="false" prefHeight="42.0" prefWidth="197.0" text="Search" textFill="#1100ff">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Button>
+          <Button fx:id="btnSave" minWidth="16.0" mnemonicParsing="false" onAction="#createStudent" prefHeight="46.0" text="Save" textFill="#1100ff">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Button>
+            <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteStudent" prefHeight="46.0" text="Delete" textFill="#1100ff">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Button>
         </buttons>
       </ButtonBar>
-      <Button fx:id="btnExit" layoutX="790.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" text="EXIT" />
+      <Button fx:id="btnExit" layoutX="790.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" text="EXIT" textFill="RED">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font></Button>
+      <Button fx:id="btnMath" layoutX="14.0" layoutY="506.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="294.0" text="Mathematical Calculations" textFill="#1100ff">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
